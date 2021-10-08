@@ -15,8 +15,12 @@ public class CookieServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         response.setContentType("text/html");
 
+        Cookie cookie= new Cookie("username","aniiita");
+        response.addCookie(cookie);
+
         // Hello
         PrintWriter out = response.getWriter();
+        //redireccionar a una pagina que me muestre lo que necesito
         out.println("<html><body>");
         out.println("<h1>" + message + "</h1>");
         out.println("</body></html>");
